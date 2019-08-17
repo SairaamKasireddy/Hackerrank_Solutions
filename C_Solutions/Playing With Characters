@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    char ch,s[10],sen[100];
+    scanf("%c",&ch);
+    scanf("\n");
+    scanf("%s",&s);
+    scanf("\n");
+    //breaks only when a new line is encountered
+    scanf("%[^\n]s",&sen);
+    printf("%c\n%s \n%s",ch,s,sen);  
+    return 0;
+}
