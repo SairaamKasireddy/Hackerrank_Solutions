@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+void maximum(int n, int k) {
+    int max1=0,max2=0,max3=0,i,j;
+    for(i=1;i<n;i++)
+    {
+        for(j=n;j>i;j--)
+        {
+            if((max1<(i&j))&&((i&j)<k))
+                max1=(i&j);
+            if((max2<(i|j))&&((i|j)<k))
+                max2=(i|j);
+            if((max3<(i^j))&&((i^j)<k))
+                max3=(i^j);
+            
+        }
+    }
+    printf("%d\n%d\n%d",max1,max2,max3); 
+}
+
+int main() {
+    int n, k;
+  
+    scanf("%d %d", &n, &k);
+    maximum(n, k);
+ 
+    return 0;
+}
